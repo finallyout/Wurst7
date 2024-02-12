@@ -17,9 +17,9 @@ public final class AutoPanicHack extends Hack implements UpdateListener
 {
 	private final SliderSetting detectionRangeSlider = new SliderSetting(
 		"Detection range",
-		"Determines how close another player has to be to auto panic\n"
-			+ "Any play further away than the specified value will trigger auto panic.",
-		5, 1, 10, 0.05, ValueDisplay.DECIMAL);
+		"Determines how close another player has to be to auto panic.\n"
+			+ "Any player closer than the specified value will trigger auto panic.",
+		128, 0, 512, 1, ValueDisplay.DECIMAL);
 	
 	private final CheckboxSetting dontPanicNearFriendsCheckbox =
 		new CheckboxSetting("Don't auto panic near friends",
@@ -75,5 +75,6 @@ public final class AutoPanicHack extends Hack implements UpdateListener
 		for(Hack hack : WURST.getHax().getAllHax())
 			if(hack.isEnabled() && hack != this)
 				hack.setEnabled(false);
+		setEnabled(false);
 	}
 }

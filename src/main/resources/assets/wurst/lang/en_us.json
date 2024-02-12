@@ -34,6 +34,7 @@
   "description.wurst.hack.autofish": "Automatically catches fish using your best fishing rod. If it finds a better rod while fishing, it will automatically switch to it.",
   "description.wurst.hack.automine": "Automatically mines any block that you look at.",
   "description.wurst.hack.autopotion": "Automatically throws splash potions of instant health when your health is low.",
+  "description.wurst.hack.autopanic": "Instantly turns off all enabled hacks when a player is detected in the detection range.\nBe careful with this one!",
   "description.wurst.hack.autoreconnect": "Automatically reconnects when you get kicked from the server.",
   "description.wurst.hack.autorespawn": "Automatically respawns you whenever you die.",
   "description.wurst.hack.autosign": "Instantly writes whatever text you want on every sign you place or edit. Once activated, you can write normally on the first sign to specify the text for all other signs.",

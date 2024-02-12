@@ -61,7 +61,8 @@ public enum EntityUtils
 	}
 	
 	public static final Predicate<Entity> IS_OTHER_PLAYER =
-		e -> e != null && e instanceof PlayerEntity && e != MC.player;
+		e -> e != null && e instanceof PlayerEntity && e != MC.player
+			&& !(e instanceof FakePlayerEntity);
 	
 	/**
 	 * Interpolates (or "lerps") between the entity's position in the previous

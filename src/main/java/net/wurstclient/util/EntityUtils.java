@@ -20,6 +20,7 @@ import net.minecraft.entity.projectile.ShulkerBulletEntity;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.entity.player.Player;
 import net.wurstclient.WurstClient;
 
 public enum EntityUtils
@@ -34,7 +35,7 @@ public enum EntityUtils
 		return StreamSupport.stream(MC.world.getEntities().spliterator(), true)
 			.filter(IS_ATTACKABLE);
 	}
-	
+
 	public static final Predicate<Entity> IS_ATTACKABLE = e -> e != null
 		&& !e.isRemoved()
 		&& (e instanceof LivingEntity && ((LivingEntity)e).getHealth() > 0
@@ -52,6 +53,17 @@ public enum EntityUtils
 	
 	public static final Predicate<AnimalEntity> IS_VALID_ANIMAL =
 		a -> a != null && !a.isRemoved() && a.getHealth() > 0;
+	
+	public static Stream<Entity> getOtherPlayers()
+	{
+		return StreamSupport.stream(MC.world.getEntities().spliterator(), true)
+			.filter(IS_OTHER_PLAYER);
+	}
+
+	public static final Predicate<Entity> IS_OTHER_PLAYER = e -> e != null 
+		&& e instanceof Player
+		&& e != MC.player 
+
 	
 	/**
 	 * Interpolates (or "lerps") between the entity's position in the previous
